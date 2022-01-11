@@ -1,0 +1,332 @@
+1.
+package etgtraining;
+
+public class Employee {
+	
+	public int empid;
+	public String empname;
+	public int empsal;
+	private int salcal;
+	
+	public void display() {
+		
+		System.out.println(empid);
+		System.out.println(empname);
+		System.out.println(empsal);
+	}
+	public void salcal() {
+		salcal= empsal-2000;
+		System.out.println(salcal);
+		
+	}
+	public class manager extends Employee{
+		
+		public void salcal() {
+			salcal= empsal-2000;
+			System.out.println(salcal);
+		}
+	}
+	public class developer extends Employee{
+		
+		public void salcal() {
+			salcal= empsal-2000;
+			System.out.println(salcal);
+		}
+	}
+	public class tester extends Employee{
+		
+		public void salcal() {
+			salcal= empsal-4000;
+			System.out.println(salcal);
+		}
+	}
+	public static void main(String[] args) {
+		 Employee emp = new Employee();
+		 tester tes=emp.new tester();
+		 emp.empid=01;
+		 emp.empname="sai akhil";
+		 emp.empsal=23000;
+		 emp.salcal();
+		 emp.display();
+		 
+		
+	}
+
+}
+
+
+
+2.
+package etgtraining;
+public class Gst {
+	// initializing the Properties
+	int ProID;
+	 String ProName;
+	 double Price; 
+	double GST;
+	// creating tax method
+	public double ProPrice() {
+		return Price + GST;
+	}
+	public static void main(String[] args) {
+		//creating object for product class
+		 Gst p1 = new Gst();
+		 p1.ProID = 104;
+		 p1.ProName="Mobile";
+		 p1.Price=12500;
+		 p1.GST= p1.Price/18;
+		 // displaying the product information
+		 System.out.println(" the product ID is " + p1.ProID + " "+ "the product name is " + p1.ProName + " "+  "the price of phone is " +  p1.Price);
+		System.out.println( "the price of phone After adding the GST Tax Price  is " +  p1.ProPrice());
+		 
+	}
+
+}
+
+
+3.
+package etgtraining;
+
+public class Iphone1 {
+	
+	int memorysize;
+	
+	void price() {
+		if(memorysize==32) {
+			System.out.println("Price is 15000");
+		}
+		
+		else if (memorysize==64) {
+			System.out.println("Price is 25000");
+			
+		}
+
+		else if (memorysize==128) {
+			System.out.println("Price is 40000");
+		}
+		
+	}
+		
+
+	public static void main(String[] args) {
+		
+		Iphone1 Ip=new Iphone1();
+		Ip.memorysize=64;
+		Ip.price();
+		
+	}
+
+}
+
+
+
+4.
+package etgtraining.domain;
+
+public class Employee {
+	
+	public int empno;
+	public String empname;
+	public int salcal;
+	
+	public void display() {
+		System.out.println("display the empno");
+	}
+	
+	public void salcal() {
+		System.out.println("calculate the salary");
+	}
+
+}
+
+
+package etgtraining.domain;
+
+public class Manager extends Employee {
+	
+	public String empname;
+	public int calsal;
+	
+	public void display() {
+		System.out.println("Calculate the salary");
+		
+	}
+
+}
+
+
+package etgtraining.domain;
+
+public class Developer extends Manager {
+	
+	public String empname;
+	public int calsal;
+	
+	public void display() {
+		System.out.println("Salary calculation of emp");
+		
+
+}
+	
+}
+
+package etgtraining.domain;
+
+public class Tester extends Developer {
+	
+	public String empname;
+	public int calsal;
+	
+	public void display() {
+		System.out.println("Cal Emp Salary");
+		
+
+}
+
+}
+
+main
+package etgtraining.domain;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Manager m1 = new Manager();
+		m1.display();
+		
+		Developer d1 = new Developer();
+		d1.display();
+		
+		Tester t1 = new Tester();
+		t1.display();
+		
+		
+	}
+
+}
+
+
+
+
+5.
+package etgtraining.domain;
+
+public abstract class Shape {
+	private double height;  // To hold height.
+	   private double width;  //To hold width or base
+
+	   // Set height and width
+	   public void setValues(double height, double width)
+	   {
+	      this.height = height;
+	      this.width = width;
+	   }
+
+	   //Get height
+	   public double getHeight() 
+	   {
+	       return height;
+	   }
+	     
+	   //Get width
+	   public double getWidth() 
+	   {
+	       return width;
+	   } 
+
+	   // The getArea method is abstract.   
+	   // It must be overridden in a subclass. 
+
+	   public abstract double getArea();
+	}
+
+
+package etgtraining.domain;
+
+public class Triangle extends Shape
+{ 
+    //Calculate and return area of triangle
+    public double getArea() 
+    {
+        return (getHeight() * getWidth()) / 2;
+    }
+}       
+
+
+package etgtraining.domain;
+
+public class Square extends Shape
+{
+    //Calculate and return area of Square
+    public double getArea()
+    {
+        return getHeight() * getWidth();
+    }
+}
+
+package etgtraining.domain;
+
+public class Rectangle extends Shape
+{
+    //Calculate and return area of rectangle
+    public double getArea()
+    {
+        return getHeight() * getWidth();
+    }
+}
+
+main
+
+package etgtraining.domain;
+
+public class AbstractDemo {
+
+	public static void main(String[] args) {
+		
+		Shape shape;
+        Rectangle rect = new Rectangle();
+        
+        shape = rect;
+        shape.setValues(78, 5);
+        
+        //Display the area of rectangle
+        System.out.println("Area of rectangle : " + shape.getArea());
+        
+        // assign subclass reference to subclass variable
+        Triangle tri = new Triangle();
+        
+        // shape points to the object         
+        shape = tri;
+        
+        // Set data in Triangle's object         
+        shape.setValues(34,3);
+        
+        //Display the area of triangle        
+        System.out.println("Area of triangle : " + shape.getArea());
+        
+        // assign subclass reference to subclass variable
+        Rectangle rect1 = new Rectangle();
+        
+        // shape points to the object 
+        shape = rect1;
+
+        // Set data in Square object 
+        shape.setValues(40, 5);
+        
+        //Display the area of square
+        System.out.println("Area of square : " + shape.getArea());
+        
+        // assign subclass reference to subclass variable
+        Square squ1 = new Square();
+        
+        // shape points to the object        
+        shape = squ1;
+       
+	}
+
+}
+
+}
+
+}

@@ -1,0 +1,146 @@
+1.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		//initializing numbers to compare  
+		int a=12, b=25, c=89;  
+		//comparing numbers, a with b and a with c   
+		//if both conditions are true, prints a  
+		if(a>=b && a>=c)  
+		System.out.println(a+" is the largest Number");  
+		//comparing b with a and b with c  
+		//if both conditions are true, prints b  
+		else if (b>=a && b>=c)  
+		System.out.println(b+" is the largest Number");  
+		else  
+		//prints c if the above conditions are false  
+		System.out.println(c+" is the largest number");  
+	}
+}
+
+
+
+2.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		 int i;
+
+		 System.out.println ("The first 10 natural numbers are:\n");
+
+		 for (i=1;i<=10;i++)
+
+		 {      
+
+		  System.out.println (i);
+
+		 }
+
+		 System.out.println ("\n");
+
+		 }
+
+		 
+	}
+
+
+
+
+3.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		int number=2; 
+		int val=2,sum=0; 
+		for(int i=1;i<=2;i++) 
+		{ 
+		for(int j=1;j<=number;j++) 
+		{ 
+		sum=sum+val;  
+		}  
+		val=sum; 
+		 
+		sum=0;  
+		}  
+		System.out.println(val);  
+	}
+}
+
+
+
+
+4.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		int my_array[] = {1, 2, 3, 4, 5, 6};
+		int sum = 0;
+
+		for (int i : my_array)
+		    sum += i;
+		System.out.println("The sum is " + sum);
+
+		 }
+
+		 
+	}
+
+
+
+5.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		 int[] num = {1, 2, 3, 4, 5};
+		    int toFind = 3;
+		    boolean found = false;
+
+		    for (int n : num) {
+		      if (n == toFind) {
+		        found = true;
+		        break;
+		      }
+		    }
+		    
+		    if(found)
+		      System.out.println(toFind + " is found.");
+		    else
+		      System.out.println(toFind + " is not found.");
+
+		 }	 
+	}
+
+
+
+
+6.
+package etgtraining;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		 //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        System.out.println("Original array: ");  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+        System.out.println();  
+        System.out.println("Array in reverse order: ");  
+        //Loop through the array in reverse order  
+        for (int i = arr.length-1; i >= 0; i--) {  
+            System.out.print(arr[i] + " ");  
+
+		 }	 
+	}
+}
